@@ -19,3 +19,10 @@ function deleteDigit(/* n */) {
 module.exports = {
   deleteDigit
 };
+
+
+// const arr = n.toString().split('');
+// const index = arr.indexOf(Math.min(...arr).toString());
+// arr.splice(index, 1);
+// const x = +arr.join('');
+// return x;
