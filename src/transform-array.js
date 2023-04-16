@@ -30,19 +30,17 @@ function transform(arr) {
     } else if(arr[i] === '--discard-next'){
       arr.splice(i + 1, 1);
     } else if(arr[i] === '--discard-prev'){
-      console.log(result);
       arr.splice(arr[i - 1], 1)
-      console.log(result);
       i--;
-    } else if(typeof(arr[i]) === 'number') {
+    } else {
       result.push(arr[i]);
     }
   }
-  return result;
+  return result.filter(item => item !== undefined);
 }
 
-console.log(transform(["--discard-next", 3, "--double-next", 2, 4, 5, '--discard-prev', 6, '--double-prev']));
-
+// console.log(transform(["--discard-next", 3, true, "--double-next", 2, undefined, 4, 5, '--discard-prev', 6, '--double-prev']));
+// if(typeof(arr[i]) === 'number') 
 module.exports = {
   transform
 };
